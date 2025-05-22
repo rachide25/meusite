@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Galeria do Rachide</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :root {
+            --cor-primaria: #008cff;
+            --cor-secundaria: #f5f5f5;
+            --cor-escura: #222;
+            --cor-clara: white;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: var(--cor-secundaria);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--cor-primaria);
+            color: var(--cor-clara);
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            background-color: #006bb3;
+            padding: 10px;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: yellow;
+        }
+
+        section {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        img, video {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 15px;
+            margin: 20px auto;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+
+        img:hover, video:hover {
+            transform: scale(1.03);
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: var(--cor-primaria);
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #005fa3;
+        }
+
+        form input, form textarea {
+            width: 90%;
+            max-width: 400px;
+            padding: 10px;
+            margin: 10px auto;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            display: block;
+        }
+
+        footer {
+            background-color: var(--cor-escura);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Galeria do Rachide</h1>
+        <p>Minhas fotos e vídeos favoritos num só lugar</p>
+    </header>
+
+    <nav>
+        <a href="#inicio">Início</a>
+        <a href="#fotos">Fotos</a>
+        <a href="#videos">Vídeos</a>
+        <a href="#sobre">Sobre mim</a>
+        <a href="#contato">Contato</a>
+    </nav>
+
+    <section id="inicio">
+        <h2>Bem-vindo!</h2>
+        <p>Explore minhas fotos e vídeos com um clique.</p>
+    </section>
+
+    <section id="fotos">
+        <h2>Fotos</h2>
+        <img src="foto1.jpg" alt="Foto 1">
+        <img src="foto2.jpg" alt="Foto 2">
+    </section>
+
+    <section id="videos">
+        <h2>Vídeos</h2>
+        <button onclick="mostrarVideo()">Ver vídeo</button>
+        <div id="videoContainer" style="display:none;">
+            <video controls>
+                <source src="video1.mp4" type="video/mp4">
+            </video>
+        </div>
+    </section>
+
+    <section id="sobre">
+        <h2>Sobre mim</h2>
+        <p>Sou Rachide, jovem apaixonado por tecnologia e audiovisual. Aqui compartilho momentos importantes e ideias criativas.</p>
+    </section>
+
+    <section id="contato">
+        <h2>Contato</h2>
+        <form>
+            <input type="text" placeholder="Seu nome" required><br>
+            <input type="email" placeholder="Seu e-mail" required><br>
+            <textarea rows="4" placeholder="Sua mensagem" required></textarea><br>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Rachide | Siga no Instagram, Facebook e TikTok</p>
+    </footer>
+
+    <script>
+        function mostrarVideo() {
+            document.getElementById("videoContainer").style.display = "block";
+            event.target.style.display = "none";
+        }
+    </script>
+
+</body>
+</html>
