@@ -2,6 +2,47 @@
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
+    <!-- Lightbox 2 via CDN -->
+<link href="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/css/lightbox.min.css" rel="stylesheet">
+
+<!-- Estilo da grade de colagem -->
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    max-width: 600px;
+    margin: 40px auto;
+  }
+
+  .grid a {
+    display: block;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    transition: transform 0.2s;
+  }
+
+  .grid a:hover {
+    transform: scale(1.02);
+  }
+
+  .grid img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Corrigir o zoom exagerado no popup */
+  .lb-image {
+    object-fit: contain !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    width: auto !important;
+    height: auto !important;
+  }
+</style>
+
     <title>Galeria do Rachide</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
@@ -165,6 +206,16 @@
         <h2>Sobre mim</h2>
         <p>Sou Rachide, jovem apaixonado por tecnologia e audiovisual. Aqui compartilho momentos importantes e ideias criativas.</p>
     </section>
+        <!-- Seção de colagem com Lightbox -->
+<section id="colagem">
+  <h2 style="text-align: center;">Colagem de Fotos</h2>
+  <div class="grid">
+    <a href="foto10.jpg" data-lightbox="galeria" data-title="Foto 10"><img src="foto10.jpg" alt="Foto 10"></a>
+    <a href="foto20.jpg" data-lightbox="galeria" data-title="Foto 20"><img src="foto20.jpg" alt="Foto 20"></a>
+    <a href="foto30.jpg" data-lightbox="galeria" data-title="Foto 30"><img src="foto30.jpg" alt="Foto 30"></a>
+    <a href="foto40.jpg" data-lightbox="galeria" data-title="Foto 40"><img src="foto40.jpg" alt="Foto 40"></a>
+  </div>
+</section>
 
     <section id="contato">
         <h2>Contato</h2>
@@ -182,6 +233,9 @@
             event.target.style.display = "none";
         }
     </script>
+<!-- Lightbox 2 script -->
+<script src="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/js/lightbox.min.js"></script>
+
 <!-- RODAPÉ -->
 <footer style="background-color: #333; color: white; text-align: center; padding: 20px; margin-top: 40px;">
   <p>© 2025 Rachide. Todos os direitos reservados.</p>
